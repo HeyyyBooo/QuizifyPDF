@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF To MCQ Generator</title>
+    <style>
+        body {
+            font-family: Candara;
+            margin: 0;
+            padding: 0;
+            background-color: #1f7a8c;
+        }
+
+        .container {
+            width: 80%;
+            height: 500px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            margin-right: 20px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #1f7a8c;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        input[type="file"]::-webkit-file-upload-button:hover {
+            background-color: #fff;
+            color: #1f7a8c;
+            border: 1px solid #1f7a8c;
+            transition: all 0.2s ease-in-out;
+        }
+
+        input[type="file"] {
+            position: relative; /* Set input position to relative */
+            font-size: 15px;
+            padding: 150px 350px;
+            margin-bottom: 20px;
+            border: 2px dashed #1f7a8c;
+            border-radius: 5px;
+            background-color: #1f7a8c17;
+            transition: all 0.2s ease-in-out;
+            width: 80%;
+            height: 300px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] + p { /* Style the paragraph following the input */
+            position: absolute; /* Position the paragraph absolutely */
+            font-size: 20px;
+            margin-top: -270px; /* Adjust top margin to position it inside the input */
+            margin-left: 26%; /* Adjust left margin to center it */
+            color:black /* Adjust text color */
+        }
+
+        button[type="submit"] {
+            margin-top: 20px;
+            font-size: 15px;
+            padding: 10px 20px;
+            background-color: #1f7a8c;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #fff;
+            color: #1f7a8c;
+            border: 1px solid #1f7a8c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/static/images/logo2.png" alt="" style="height:100px; margin-left:37%">
+        <form method="POST" action="/extract" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".pdf" required>
+            <p>Drag and Drop Files or Select from your device</p>
+            <br>
+            <button type="submit">Generate MCQ</button>
+        </form>
+    </div>
+</body>
+</html>
